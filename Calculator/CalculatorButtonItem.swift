@@ -48,6 +48,12 @@ extension CalculatorButtonItem {
             case.command: return "commandBackground"
         }
     }
+    var foregroundColor: Color {
+        switch self {
+            case .digit, .dot, .op: return Color.white
+            case .command: return Color("commandForegroundColor")
+        }
+    }
 }
 
 extension CalculatorButtonItem: Hashable {}

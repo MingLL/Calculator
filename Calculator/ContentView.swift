@@ -38,13 +38,14 @@ struct CalculatorButton: View {
     let title: String
     let size: CGSize
     let backgroundColorName: String
+    let foregroundColor: Color
     let action: () -> Void
     
     var body: some View {
         Button(action: action, label: {
             Text(title)
                 .font(.system(size: fontSize))
-                .foregroundColor(.white)
+                .foregroundColor(foregroundColor)
                 .frame(width: size.width, height: size.height)
                 .background(Color(backgroundColorName))
                 .cornerRadius(size.width / 2)
@@ -60,7 +61,8 @@ struct CalculatorButtonRow: View {
                 CalculatorButton(
                     title: item.title,
                     size: item.size,
-                    backgroundColorName: item.backgroundColorName) {
+                    backgroundColorName: item.backgroundColorName,
+                    foregroundColor: item.foregroundColor){
                     print(item.title)
                 }
             }
