@@ -7,20 +7,23 @@
 
 import SwiftUI
 
+let scale = UIScreen.main.bounds.width / 414
+
 struct ContentView: View {
+    @State var brain: CalculatorBrain = .left("0")
     var body: some View {
         VStack(spacing: 12) {
             Spacer()
-            Text("0")
+            Text(brain.output)
                 .font(.system(size: 76))
                 .minimumScaleFactor(0.5)
                 .lineLimit(1)
-                .padding(.trailing, 24)
+                .padding(.trailing, 24 * scale)
                 .frame(
                     minWidth: 0,
                     maxWidth: .infinity,
                     alignment: .trailing)
-            CalculatorButtonPad()
+            CalculatorButtonPad(brain: $brain)
                 .padding(.bottom)
         }
        
@@ -46,14 +49,15 @@ struct CalculatorButton: View {
             Text(title)
                 .font(.system(size: fontSize))
                 .foregroundColor(foregroundColor)
-                .frame(width: size.width, height: size.height)
+                .frame(width: size.width * scale, height: size.height * scale)
                 .background(Color(backgroundColorName))
-                .cornerRadius(size.width / 2)
+                .cornerRadius(size.width * scale / 2)
         })
     }
 }
 
 struct CalculatorButtonRow: View {
+    @Binding var brain: CalculatorBrain
     let row: [CalculatorButtonItem]
     var body: some View {
         HStack {
@@ -63,7 +67,7 @@ struct CalculatorButtonRow: View {
                     size: item.size,
                     backgroundColorName: item.backgroundColorName,
                     foregroundColor: item.foregroundColor){
-                    print(item.title)
+                    self.brain = self.brain.apply(itme: item)
                 }
             }
         }
@@ -71,6 +75,7 @@ struct CalculatorButtonRow: View {
 }
 
 struct CalculatorButtonPad: View {
+    @Binding var brain: CalculatorBrain
     let pad: [[CalculatorButtonItem]] = [ [.command(.clear), .command(.flip), .command(.percent), .op(.divide)],
         [.digit(7), .digit(8), .digit(9), .op(.multiply)],
         [.digit(4), .digit(5), .digit(6), .op(.minus)],
@@ -80,7 +85,7 @@ struct CalculatorButtonPad: View {
     var body: some View {
         VStack(spacing: 8) {
             ForEach(pad, id:\.self) { row in
-                CalculatorButtonRow(row: row)
+                CalculatorButtonRow(brain: self.$brain, row: row  )
             }
         }
     }

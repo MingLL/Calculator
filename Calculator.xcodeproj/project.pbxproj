@@ -12,6 +12,7 @@
 		9CC46E0526DE4776006884A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CC46E0426DE4776006884A1 /* Assets.xcassets */; };
 		9CC46E0826DE4776006884A1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CC46E0726DE4776006884A1 /* Preview Assets.xcassets */; };
 		9CC46E1026DE4AF8006884A1 /* CalculatorButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC46E0F26DE4AF8006884A1 /* CalculatorButtonItem.swift */; };
+		9CC96D4D26EBAE9E00C49268 /* CalculatorBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC96D4C26EBAE9E00C49268 /* CalculatorBrain.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		9CC46E0726DE4776006884A1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9CC46E0926DE4776006884A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9CC46E0F26DE4AF8006884A1 /* CalculatorButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorButtonItem.swift; sourceTree = "<group>"; };
+		9CC96D4C26EBAE9E00C49268 /* CalculatorBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorBrain.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				9CC46E0426DE4776006884A1 /* Assets.xcassets */,
 				9CC46E0926DE4776006884A1 /* Info.plist */,
 				9CC46E0626DE4776006884A1 /* Preview Content */,
+				9CC96D4C26EBAE9E00C49268 /* CalculatorBrain.swift */,
 			);
 			path = Calculator;
 			sourceTree = "<group>";
@@ -143,6 +146,7 @@
 			files = (
 				9CC46E0326DE4774006884A1 /* ContentView.swift in Sources */,
 				9CC46E0126DE4774006884A1 /* CalculatorApp.swift in Sources */,
+				9CC96D4D26EBAE9E00C49268 /* CalculatorBrain.swift in Sources */,
 				9CC46E1026DE4AF8006884A1 /* CalculatorButtonItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
